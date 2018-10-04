@@ -8,16 +8,16 @@
 User.delete_all
 
 User.create!(
-  username: 'mashu',
-  password: 'pass123'
+{  username: 'mashu',
+  password: 'pass123'}
 )
 
 User.create!(
-  username: 'mashulicious',
-  password: 'pass123'
+{  username: 'mashulicious',
+  password: 'pass123'}
 )
 
 User.create!(
-  username: 'nakodila',
-  password: 'pass123'
+{  username: 'nakodila',
+  password: 'pass123'}
 )

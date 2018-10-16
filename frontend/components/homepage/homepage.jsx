@@ -19,5 +19,4 @@ const Homepage = ({ currentUser, logout }) => {
   return currentUser ? personalGreeting() : sessionLinks();
 };
 
-
 export default Homepage;

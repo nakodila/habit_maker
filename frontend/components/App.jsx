@@ -8,16 +8,19 @@ import {
 import Homepage from './homepage/homepage_container';
 import LoginFormContainer from './credentials/login_form_container';
 import SignupFormContainer from './credentials/signup_form_container';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import {
+  AppContainer
+} from './styledApp.js'
 
 const App = () => (
-  <div>
-    <h1>Sticky to it</h1>
+  <AppContainer>
     <Homepage/>
     <Switch>
-      <Route path="/login" component={LoginFormContainer} />
-      <Route path="/signup" component={SignupFormContainer} />
+      <AuthRoute exact path="/login" component={LoginFormContainer} />
+      <AuthRoute exact path="/signup" component={SignupFormContainer} />
     </Switch>
-</div>
+  </AppContainer>
 );
 
 export default App;

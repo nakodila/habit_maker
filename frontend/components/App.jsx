@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom';
 
+import './reset.css';
 import Homepage from './homepage/homepage_container';
 import LoginFormContainer from './credentials/login_form_container';
 import SignupFormContainer from './credentials/signup_form_container';

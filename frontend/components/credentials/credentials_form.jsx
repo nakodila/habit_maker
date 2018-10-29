@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import {
+  SessionFormContainer
+} from './styledCredentialsForm';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -37,7 +40,7 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <SessionFormContainer>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           Welcome to Stick to it!
           <br/>
@@ -64,7 +67,7 @@ class SessionForm extends React.Component {
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
-      </div>
+      </SessionFormContainer>
     );
   }
 }

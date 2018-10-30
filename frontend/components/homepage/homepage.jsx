@@ -6,27 +6,28 @@ import {
   Logo,
   LoginSignupContainer,
   LogoutButton,
-  Welcome
+  SessionLink,
+  StyledText
 } from './styledHomepage.js';
 
 const Homepage = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <HomepageNav>
-      <Logo>Stick-2-It</Logo>
+      <Logo>Stick-to-It</Logo>
       <LoginSignupContainer>
-        <Link to="/login">Login</Link>
-        &nbsp;or&nbsp;
-        <Link to="/signup">Sign up!</Link>
+        <SessionLink to="/login">Login</SessionLink>
+        <StyledText>or</StyledText>
+        <SessionLink to="/signup">Sign up!</SessionLink>
       </LoginSignupContainer>
     </HomepageNav>
   );
   const personalGreeting = () => (
     <hgroup >
       <HomepageNav>
-        <Logo>Stick-2-It</Logo>
+        <Logo>Stick-to-It</Logo>
         <LogoutButton onClick={logout}>Log Out</LogoutButton>
       </HomepageNav>
-      <Welcome>Hi, {currentUser.username}!</Welcome>
+      <StyledText>Hi, {currentUser.username}!</StyledText>
     </hgroup>
   );
 

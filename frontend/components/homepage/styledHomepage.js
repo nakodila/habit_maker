@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import {
   Button
@@ -30,13 +31,21 @@ export const HomepageNav = styled.nav`
 export const Logo = styled.h1`
   font-family: ${mainFont};
   color: ${textColor};
-  font-size: 24px;
+  font-size: 25px;
+`;
+
+export const SessionLink = styled(Link)`
+  font-family: ${mainFont};
+  font-size: 20px;
 `;
 
 export const LoginSignupContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  width: 150px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 170px;
 `;
 
 export const LogoutButton = styled(Button)`
@@ -48,7 +57,7 @@ export const LogoutButton = styled(Button)`
   border-color: ${borderColor};
 `;
 
-export const Welcome = styled.h2`
+export const StyledText = styled.h2`
   font-family: ${mainFont};
   color: ${textColor};
   font-size: 20px;

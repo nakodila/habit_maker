@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
     return (
       <SessionFormContainer>
         <Form onSubmit={this.handleSubmit}>
-          <Greeting>Welcome to Stick-2-it!</Greeting>
+          <Greeting>Welcome to Stick-to-it!</Greeting>
           {this.renderErrors()}
             <Label>Username:</Label>
             <Input type="text"

@@ -22,7 +22,7 @@ export const HomepageNav = styled.nav`
   -ms-flex-pack: justify;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: ${navColor};
   font-family: ${mainFont};
   color: ${textColor};

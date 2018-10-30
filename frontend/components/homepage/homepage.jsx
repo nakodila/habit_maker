@@ -12,7 +12,7 @@ import {
 const Homepage = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <HomepageNav>
-      <Logo>Stick-To-It</Logo>
+      <Logo>Stick-2-It</Logo>
       <LoginSignupContainer>
         <Link to="/login">Login</Link>
         &nbsp;or&nbsp;
@@ -23,7 +23,7 @@ const Homepage = ({ currentUser, logout }) => {
   const personalGreeting = () => (
     <hgroup >
       <HomepageNav>
-        <Logo>Stick-To-It</Logo>
+        <Logo>Stick-2-It</Logo>
         <LogoutButton onClick={logout}>Log Out</LogoutButton>
       </HomepageNav>
       <Welcome>Hi, {currentUser.username}!</Welcome>

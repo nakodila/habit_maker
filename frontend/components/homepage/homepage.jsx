@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import {
   HomepageNav,
@@ -10,16 +9,20 @@ import {
   StyledText
 } from './styledHomepage.js';
 
+import {
+  AddHabit
+} from './habits/habits'
+
 const Homepage = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <HomepageNav>
-      <Logo>Stick-to-It</Logo>
-      <LoginSignupContainer>
-        <SessionLink to="/login">Login</SessionLink>
-        <StyledText>or</StyledText>
-        <SessionLink to="/signup">Sign up!</SessionLink>
-      </LoginSignupContainer>
-    </HomepageNav>
+      <HomepageNav>
+        <Logo>Stick-to-It</Logo>
+        <LoginSignupContainer>
+          <SessionLink to="/login">Login</SessionLink>
+          <StyledText>or</StyledText>
+          <SessionLink to="/signup">Sign up!</SessionLink>
+        </LoginSignupContainer>
+      </HomepageNav>
   );
   const personalGreeting = () => (
     <hgroup >
@@ -28,6 +31,7 @@ const Homepage = ({ currentUser, logout }) => {
         <LogoutButton onClick={logout}>Log Out</LogoutButton>
       </HomepageNav>
       <StyledText>Hi, {currentUser.username}!</StyledText>
+      <AddHabit/>
     </hgroup>
   );
 

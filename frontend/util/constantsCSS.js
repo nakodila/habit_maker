@@ -9,3 +9,4 @@ export const flexColumn = 'display: -webkit-box;' +
                           'display: flex;' +
                           '-ms-flex-flow: column nowrap;' +
                           'flex-flow: column nowrap;'
+export const addHabitColor = '#F4F1EA';

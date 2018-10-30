@@ -7,7 +7,8 @@ import {
   navColor,
   textColor,
   mainFont,
-  buttonColor
+  buttonColor,
+  borderColor
 } from '../../util/constantsCSS.js';
 
 export const HomepageNav = styled.nav`
@@ -44,7 +45,7 @@ export const LogoutButton = styled(Button)`
   color: ${textColor};
   font-size: 15px;
   font-weight: 700;
-  border-color: ${textColor};
+  border-color: ${borderColor};
 `;
 
 export const Welcome = styled.h2`

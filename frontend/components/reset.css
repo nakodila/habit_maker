@@ -49,3 +49,7 @@ table {
 button:focus {
 	outline:0;
 }
+
+div, input, button, ul, form {
+	box-sizing: border-box;
+}

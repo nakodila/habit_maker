@@ -8,19 +8,58 @@ import {
   navColor,
   textColor,
   mainFont,
-  buttonColor
+  buttonColor,
+  navHeight,
+  borderColor,
+  flexColumn
 } from '../../util/constantsCSS.js';
 
+
 export const SessionFormContainer = styled.div`
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: column nowrap;
-  flex-flow: column nowrap;
+  ${flexColumn}
   width: 100%;
+  height: calc(100vh - ${navHeight});
+  justify-content: center;
+  align-items: center;
   font-family: ${mainFont};
+  font-size: 22px;
   color: ${textColor};
 `;
-export const Button = styled(Button)`
+export const SignUpButton = styled(Button)`
+  width: 100%;
+  height: 50px;
+  background-color: ${buttonColor};
+  font-size: 20px;
+  color: ${textColor};
+  border-color: ${borderColor};
+`;
+
+export const Form = styled.form`
+  ${flexColumn}
+  color: ${textColor};
+  height: 50%;
+  justify-content: space-between;
+`;
+
+export const Greeting = styled.h1`
+  font-size: 25px;
+  margin: 20px;
+`;
+
+export const Errors = styled.ul`
+  color: red;
+  font-size: 18px;
+`;
+
+export const Label = styled.label`
+  display: block;
+`;
+
+export const Input = styled.input`
+  display: block;
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: ${textColor};
 `;

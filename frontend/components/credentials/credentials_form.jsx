@@ -1,7 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import {
-  SessionFormContainer
+  Errors,
+  Form,
+  Greeting,
+  Input,
+  Label,
+  SessionFormContainer,
+  SignUpButton
 } from './styledCredentialsForm';
 
 class SessionForm extends React.Component {
@@ -28,43 +34,35 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <Errors>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
         ))}
-      </ul>
+      </Errors>
     );
   }
 
   render() {
     return (
       <SessionFormContainer>
-        <form onSubmit={this.handleSubmit}>
-          Welcome to Stick to it!
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
+        <Form onSubmit={this.handleSubmit}>
+          <Greeting>Welcome to Stick to it!</Greeting>
           {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-              />
-            </label>
-            <br/>
-            <input type="submit" value={this.props.formType} />
-          </div>
-        </form>
+            <Label>Username:</Label>
+            <Input type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+            />
+            <Label>Password:</Label>
+            <Input type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
+            <SignUpButton type="submit">{this.props.formType}</SignUpButton>
+            <p>or {this.props.navLink} instead</p>
+        </Form>
       </SessionFormContainer>
     );
   }

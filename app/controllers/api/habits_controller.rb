@@ -1,70 +1,46 @@
 class HabitsController < ApplicationController
   before_action :require_logged_in
 
-  # GET /habits
-  # GET /habits.json
   def index
-    @habits = Habit.all
+    @habits = current_user.habits
+    @user = current_user
+    render "/api/habits/index"
   end
 
-  # GET /habits/1
-  # GET /habits/1.json
   def show
+    @habit = current_user.habits.find(params[:id])
   end
 
-  # GET /habits/new
-  def new
-    @habit = Habit.new
-  end
-
-  # GET /habits/1/edit
-  def edit
-  end
-
-  # POST /habits
-  # POST /habits.json
   def create
-    @habit = Habit.new(habit_params)
-
-    respond_to do |format|
-      if @habit.save
-        format.html { redirect_to @habit, notice: 'Habit was successfully created.' }
-        format.json { render :show, status: :created, location: @habit }
-      else
-        format.html { render :new }
-        format.json { render json: @habit.errors, status: :unprocessable_entity }
-      end
+    @habit = current_user.habits.new(habit_params)
+    @habit.user_id = current_user.id
+    if @habit.save
+      render "/api/lists/show"
+    else
+      render json: @habit.errors.full_messages, status: 422
     end
   end
 
-  # PATCH/PUT /habits/1
-  # PATCH/PUT /habits/1.json
   def update
-    respond_to do |format|
-      if @habit.update(habit_params)
-        format.html { redirect_to @habit, notice: 'Habit was successfully updated.' }
-        format.json { render :show, status: :ok, location: @habit }
-      else
-        format.html { render :edit }
-        format.json { render json: @habit.errors, status: :unprocessable_entity }
-      end
+    @habit = current_user.habits.find(params[:id])
+    if @habit.update(habit_params)
+      render "/api/habits/show"
+    else
+      render json: @habit.errors.full_messages, status: 422
+      render "/api/habits/show"
     end
   end
 
-  # DELETE /habits/1
-  # DELETE /habits/1.json
   def destroy
+    @habit = current_user.habits.find(params[:id])
     @habit.destroy
-    respond_to do |format|
-      format.html { redirect_to habits_url, notice: 'Habit was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    render "/api/habits/show"
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_habit
-      @habit = Habit.find(params[:id])
+      @habit = current_user.habits.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

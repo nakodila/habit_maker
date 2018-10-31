@@ -1,0 +1,37 @@
+<%= form_with(model: habit, local: true) do |form| %>
+  <% if habit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(habit.errors.count, "error") %> prohibited this habit from being saved:</h2>
+
+      <ul>
+      <% habit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :habit_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :habit_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :habit_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration %>
+    <%= form.datetime_select :duration, id: :habit_duration %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

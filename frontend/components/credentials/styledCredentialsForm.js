@@ -46,11 +46,6 @@ export const Greeting = styled.h1`
   margin: 20px;
 `;
 
-export const Errors = styled.ul`
-  color: red;
-  font-size: 18px;
-`;
-
 export const Label = styled.label`
   display: block;
 `;

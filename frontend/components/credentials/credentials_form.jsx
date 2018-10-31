@@ -1,7 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+
 import {
-  Errors,
+  Errors
+} from '../errors/styledErrors';
+
+import {
   Form,
   Greeting,
   Input,

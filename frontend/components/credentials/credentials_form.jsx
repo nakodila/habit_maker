@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import {
   Errors
-} from '../errors/styledErrors';
+} from '../errors/styled_errors';
 
 import {
   Form,
@@ -12,7 +12,7 @@ import {
   Label,
   SessionFormContainer,
   SignUpButton
-} from './styledCredentialsForm';
+} from './styled_credentials_form';
 
 class SessionForm extends React.Component {
   constructor(props) {

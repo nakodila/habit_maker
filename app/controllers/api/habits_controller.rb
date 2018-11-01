@@ -1,4 +1,4 @@
-class HabitsController < ApplicationController
+class Api::HabitsController < ApplicationController
   before_action :require_logged_in
 
   def index
@@ -15,7 +15,7 @@ class HabitsController < ApplicationController
     @habit = current_user.habits.new(habit_params)
     @habit.user_id = current_user.id
     if @habit.save
-      render "/api/lists/show"
+      render "/api/habits/show"
     else
       render json: @habit.errors.full_messages, status: 422
     end

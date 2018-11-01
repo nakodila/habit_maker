@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {
   Button
 } from '../componentLibrary/button';
+
 import {
   navColor,
   textColor,
@@ -11,6 +12,19 @@ import {
   buttonColor,
   borderColor
 } from '../../util/constantsCSS.js';
+
+export const HomepageContainer = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: ${mainFont};
+  color: ${textColor};
+`;
 
 export const HomepageNav = styled.nav`
   box-sizing: border-box;
@@ -61,4 +75,5 @@ export const StyledText = styled.h2`
   font-family: ${mainFont};
   color: ${textColor};
   font-size: 20px;
+  margin-bottom: 30px;
 `;

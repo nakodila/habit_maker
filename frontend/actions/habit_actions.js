@@ -14,10 +14,10 @@ const receiveHabits = (habits) => {
   }
 };
 
-const receiveHabit = (habit) => {
+const receiveHabit = (payload) => {
   return {
     type: RECEIVE_HABIT,
-    habit
+    payload
   }
 }
 const removeHabit = (habit) => {
@@ -53,8 +53,8 @@ export const fetchHabit = id => dispatch => (
 );
 
 export const createHabit = habit => dispatch => (
-  habitAPIUtil.createHabit(habit).then(habit => (
-    dispatch(receiveHabit(habit))
+  habitAPIUtil.createHabit(habit).then(payload => (
+    dispatch(receiveHabit(payload))
   ), error => (
     dispatch(receiveErrors(error.responseJSON))
   ))

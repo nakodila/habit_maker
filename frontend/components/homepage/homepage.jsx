@@ -1,17 +1,20 @@
 import React from 'react';
 
 import {
+  HomepageContainer,
   HomepageNav,
   Logo,
   LoginSignupContainer,
   LogoutButton,
   SessionLink,
   StyledText
-} from './styledHomepage.js';
+} from './styled_homepage.js';
 
 import {
   AddHabit
-} from './habits/habits'
+} from './habits/habits';
+
+import HabitForm from '../habits/habit_form_container';
 
 const Homepage = ({ currentUser, logout }) => {
   const sessionLinks = () => (
@@ -25,14 +28,17 @@ const Homepage = ({ currentUser, logout }) => {
       </HomepageNav>
   );
   const personalGreeting = () => (
-    <hgroup >
+    <div>
       <HomepageNav>
         <Logo>Stick-to-It</Logo>
         <LogoutButton onClick={logout}>Log Out</LogoutButton>
       </HomepageNav>
-      <StyledText>Hi, {currentUser.username}!</StyledText>
-      <AddHabit/>
-    </hgroup>
+      <HomepageContainer>
+        <StyledText>Hi, {currentUser.username}!</StyledText>
+        <AddHabit/>
+        <HabitForm/>
+      </HomepageContainer>
+    </div>
   );
 
   return currentUser ? personalGreeting() : sessionLinks();

@@ -14,16 +14,16 @@ const receiveHabits = (habits) => {
   }
 };
 
-const receiveHabit = (payload) => {
+const receiveHabit = (habit) => {
   return {
     type: RECEIVE_HABIT,
-    habit: payload.habit
+    habit
   }
 }
-const removeHabit = (payload) => {
+const removeHabit = (habit) => {
   return {
     type: REMOVE_HABIT,
-    habitId: payload.habit.id
+    habitId: habit.id
   }
 };
 
@@ -68,5 +68,6 @@ export const updateHabit = id => dispatch => (
 );
 export const deleteHabit = id => dispatch => {
   habitAPIUtil.deleteHabit(id).then(habit => (
-    dispatch(removeHabit(habit))))
+    dispatch(removeHabit(habit))
+  ))
 );

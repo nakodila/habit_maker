@@ -1,5 +1,9 @@
 import merge from 'lodash/merge';
-import { RECEIVE_HABIT, RECEIVE_HABITS, REMOVE_HABIT } from '../actions/habit_actions';
+import {
+  RECEIVE_HABIT,
+  RECEIVE_HABITS,
+  REMOVE_HABIT
+} from '../actions/habit_actions';
 
 const habitsReducer = (state = {}, action) => {
   let newState;

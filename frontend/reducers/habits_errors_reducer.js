@@ -1,7 +1,7 @@
 import {
   RECEIVE_HABIT_ERRORS,
   CLEAR_HABIT_ERRORS
-} from from '../actions/habit_actions';
+} from '../actions/habit_actions';
 
 const habitsErrorsReducer = (state = [], action) => {
   Object.freeze(state);

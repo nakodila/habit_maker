@@ -66,7 +66,7 @@ export const updateHabit = id => dispatch => (
     dispatch(receiveErrors(error.responseJSON))
   ))
 );
-export const deleteHabit = id => dispatch => {
+export const deleteHabit = id => dispatch => (
   habitAPIUtil.deleteHabit(id).then(habit => (
     dispatch(removeHabit(habit))
   ))

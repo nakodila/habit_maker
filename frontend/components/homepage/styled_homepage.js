@@ -14,6 +14,7 @@ import {
 } from '../../util/constantsCSS.js';
 
 export const HomepageContainer = styled.div`
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   height: 100%;

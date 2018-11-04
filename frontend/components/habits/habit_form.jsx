@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { TwitterPicker } from 'react-color';
 import Calendar from 'rc-calendar';
+import Modal from 'react-modal';
 
 import {
   Errors
@@ -43,8 +44,9 @@ class HabitForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.clearErrors();
+    const habit = Object.assign({}, this.state);
+    this.props.processForm(habit);
   }
 
   renderErrors() {
@@ -61,30 +63,32 @@ class HabitForm extends React.Component {
 
   render() {
     return (
-      <HabitFormContainer>
-        <Form onSubmit={this.handleSubmit}>
-          <Greeting>Add New Habit</Greeting>
-          {this.renderErrors()}
-          <Label>Name</Label>
-          <Input type="text"
-            value={this.state.name}
-            onChange={this.update('name')}
-          />
-          <Label>Duration</Label>
-          <Calendar/>
-          <Label>Color:</Label>
-              <TwitterPicker
-                color={ this.state.color }
-                onChangeComplete={this.handleChangeComplete}
-              />
-            <Label>Description</Label>
-              <Input type="textarea"
-                value={this.state.description}
-                onChange={this.update('description')}
-              />
-            <SignUpButton type="submit">{this.props.formType}</SignUpButton>
-        </Form>
-      </HabitFormContainer>
+      <Modal isOpen="true">
+        <HabitFormContainer>
+          <Form onSubmit={this.handleSubmit}>
+            <Greeting>Add New Habit</Greeting>
+            {this.renderErrors()}
+            <Label>Name</Label>
+            <Input type="text"
+              value={this.state.name}
+              onChange={this.update('name')}
+            />
+            <Label>Duration</Label>
+            <Calendar/>
+            <Label>Color:</Label>
+                <TwitterPicker
+                  color={this.state.color}
+                  onChangeComplete={this.handleChangeComplete}
+                />
+              <Label>Description</Label>
+                <Input type="textarea"
+                  value={this.state.description}
+                  onChange={this.update('description')}
+                />
+              <SignUpButton type="submit">{this.props.formType}</SignUpButton>
+          </Form>
+        </HabitFormContainer>
+      </Modal>
     );
   }
 };

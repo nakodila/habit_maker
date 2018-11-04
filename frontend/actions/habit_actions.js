@@ -6,7 +6,6 @@ export const REMOVE_HABIT = 'REMOVE_HABIT';
 export const RECEIVE_HABIT_ERRORS = 'RECEIVE_HABIT_ERRORS';
 export const CLEAR_HABIT_ERRORS = 'CLEAR_HABIT_ERRORS';
 
-
 const receiveHabits = (habits) => {
   return {
     type: RECEIVE_HABITS,
@@ -40,7 +39,7 @@ export const fetchHabits = () => dispatch => (
   habitAPIUtil.fetchHabits().then(habits => (
     dispatch(receiveHabits(habits))
   ), error => (
-    dispatch(receiveErrors(error.responseJSON))
+    dispatch(receiveHabitErrors(error.responseJSON))
   ))
 );
 
@@ -48,7 +47,7 @@ export const fetchHabit = id => dispatch => (
   habitAPIUtil.fetchHabit(id).then(habit => (
     dispatch(receiveHabit(habit))
   ), error => (
-    dispatch(receiveErrors(error.responseJSON))
+    dispatch(receiveHabitErrors(error.responseJSON))
   ))
 );
 
@@ -56,14 +55,14 @@ export const createHabit = habit => dispatch => (
   habitAPIUtil.createHabit(habit).then(payload => (
     dispatch(receiveHabit(payload))
   ), error => (
-    dispatch(receiveErrors(error.responseJSON))
+    dispatch(receiveHabitErrors(error.responseJSON))
   ))
 );
 export const updateHabit = id => dispatch => (
   habitAPIUtil.updateHabit(id).then(habit => (
     dispatch(receiveHabit(habit))
   ), error => (
-    dispatch(receiveErrors(error.responseJSON))
+    dispatch(receiveHabitErrors(error.responseJSON))
   ))
 );
 export const deleteHabit = id => dispatch => (

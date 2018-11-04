@@ -17,7 +17,9 @@ import {
 
 export const HabitFormContainer = styled.div`
   ${flexColumn}
-  width: 100%;
+
+  background: ${buttonColor};
+  width: 900px;
   height: calc(100vh - ${navHeight});
   justify-content: center;
   align-items: center;
@@ -25,6 +27,7 @@ export const HabitFormContainer = styled.div`
   font-size: 22px;
   color: ${textColor};
 `;
+
 export const SignUpButton = styled(Button)`
   width: 100%;
   height: 50px;

@@ -10,10 +10,7 @@ import {
   StyledText
 } from './styled_homepage.js';
 
-import {
-  AddHabit
-} from './habits/habits';
-
+import { AddHabit } from './habits/habits';
 import HabitForm from '../habits/habit_form_container';
 
 const Homepage = ({ currentUser, logout }) => {
@@ -36,7 +33,6 @@ const Homepage = ({ currentUser, logout }) => {
       <HomepageContainer>
         <StyledText>Hi, {currentUser.username}!</StyledText>
         <AddHabit/>
-        <HabitForm/>
       </HomepageContainer>
     </div>
   );

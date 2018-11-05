@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import {
-  addHabitColor
+  addHabitColor,
+  hoverBackground
 } from '../../../util/constantsCSS';
 
 export const HabitsContainer = styled.ul`
@@ -32,8 +34,12 @@ export const LowerHabits = styled.div`
   height: 160px;
 `;
 
-export const AddHabitBox = styled.li`
+export const AddHabitBox = styled(Link)`
   width: 155px;
   height: 155px;
   background-color: ${addHabitColor};
+  coursor: pointer;
+  :hover {
+    background: ${hoverBackground};
+  }
 `;

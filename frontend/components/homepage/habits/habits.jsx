@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 // import {
 //   AddIcon
 // } from './add_icon';
@@ -14,15 +14,15 @@ import {
 export const AddHabit =  () => (
   <HabitsContainer>
     <UpperHabits>
-      <AddHabitBox>
+      <AddHabitBox to="/newhabit">
       </AddHabitBox>
-      <AddHabitBox>
+      <AddHabitBox to="/newhabit">
       </AddHabitBox>
     </UpperHabits>
     <LowerHabits>
-      <AddHabitBox>
+      <AddHabitBox to="/newhabit">
       </AddHabitBox>
-      <AddHabitBox>
+      <AddHabitBox to="/newhabit">
       </AddHabitBox>
     </LowerHabits>
   </HabitsContainer>

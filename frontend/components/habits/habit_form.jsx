@@ -2,7 +2,6 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { TwitterPicker } from 'react-color';
 import Calendar from 'rc-calendar';
-import Modal from 'react-modal';
 
 import {
   Errors
@@ -29,7 +28,6 @@ class HabitForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleChangeComplete = this.handleChangeComplete.bind(this);
-
   }
 
   update(field) {
@@ -42,12 +40,21 @@ class HabitForm extends React.Component {
     this.setState({ color: colour.hex });
   };
 
+  // closeModal() {
+  //   this.setState({ isOpen: false });
+  // };
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.clearErrors();
     const habit = Object.assign({}, this.state);
     this.props.processForm(habit);
   }
+
+  // submitForm(e) {
+  //   this.handleSubmit(e);
+  //   this.props.closeModal();
+  // }
 
   renderErrors() {
     return(
@@ -63,7 +70,6 @@ class HabitForm extends React.Component {
 
   render() {
     return (
-      <Modal isOpen="true">
         <HabitFormContainer>
           <Form onSubmit={this.handleSubmit}>
             <Greeting>Add New Habit</Greeting>
@@ -88,7 +94,6 @@ class HabitForm extends React.Component {
               <SignUpButton type="submit">{this.props.formType}</SignUpButton>
           </Form>
         </HabitFormContainer>
-      </Modal>
     );
   }
 };

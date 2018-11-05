@@ -8,11 +8,10 @@ import {
 } from '../../actions/habit_actions';
 import HabitForm from './habit_form';
 
-const mapStateToProps = ({ errors, isOpen }) => {
+const mapStateToProps = ({ errors}) => {
   return {
     errors: errors.habits,
     formType: 'New Form',
-    isOpen: isOpen
   }
 };
 

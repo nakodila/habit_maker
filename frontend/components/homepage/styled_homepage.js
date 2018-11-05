@@ -52,6 +52,10 @@ export const Logo = styled.h1`
 export const SessionLink = styled(Link)`
   font-family: ${mainFont};
   font-size: 20px;
+  :hover {
+    background: ${navColor};
+    color: ${textColor};
+  }
 `;
 
 export const LoginSignupContainer = styled.div`
@@ -60,6 +64,7 @@ export const LoginSignupContainer = styled.div`
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  align-content: center;
   width: 170px;
 `;
 

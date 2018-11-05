@@ -10,3 +10,4 @@ export const flexColumn = 'display: -webkit-box;' +
                           '-ms-flex-flow: column nowrap;' +
                           'flex-flow: column nowrap;'
 export const addHabitColor = '#F4F1EA';
+export const hoverBackground ="#c0beb8";

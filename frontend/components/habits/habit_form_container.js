@@ -6,12 +6,13 @@ import {
   receiveHabitErrors,
   clearHabitErrors
 } from '../../actions/habit_actions';
+
 import HabitForm from './habit_form';
 
 const mapStateToProps = ({ errors}) => {
   return {
     errors: errors.habits,
-    formType: 'New Form',
+    formType: 'New Habit',
   }
 };
 

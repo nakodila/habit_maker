@@ -13,7 +13,8 @@ import {
   HabitFormContainer,
   Input,
   Label,
-  SignUpButton
+  AddHabit,
+  Submit
 } from './styled_habit_form';
 
 class HabitForm extends React.Component {
@@ -23,12 +24,19 @@ class HabitForm extends React.Component {
       name: '',
       color: '',
       duration: '',
-      description: ''
+      description: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.closeWindow = this.closeWindow.bind(this);
     this.handleChangeComplete = this.handleChangeComplete.bind(this);
   }
+
+  // componentDidUpdate() {
+  //   if (this.props.errors.length === 0){
+  //     this.closeWindow();
+  //   }
+  // }
 
   update(field) {
     return e => this.setState({
@@ -40,21 +48,16 @@ class HabitForm extends React.Component {
     this.setState({ color: colour.hex });
   };
 
-  // closeModal() {
-  //   this.setState({ isOpen: false });
-  // };
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.clearErrors();
     const habit = Object.assign({}, this.state);
-    this.props.processForm(habit);
+    this.props.processForm(habit).then(() => this.closeWindow());
   }
 
-  // submitForm(e) {
-  //   this.handleSubmit(e);
-  //   this.props.closeModal();
-  // }
+  closeWindow () {
+    this.props.history.push('/');
+  }
 
   renderErrors() {
     return(
@@ -91,7 +94,8 @@ class HabitForm extends React.Component {
                   value={this.state.description}
                   onChange={this.update('description')}
                 />
-              <SignUpButton type="submit">{this.props.formType}</SignUpButton>
+              <AddHabit type="submit">Add {this.props.formType}
+              </AddHabit>
           </Form>
         </HabitFormContainer>
     );

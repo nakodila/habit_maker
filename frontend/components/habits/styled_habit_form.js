@@ -14,10 +14,13 @@ import {
   flexColumn
 } from '../../util/constantsCSS.js';
 
-
 export const HabitFormContainer = styled.div`
   ${flexColumn}
-
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background: ${buttonColor};
   width: 900px;
   height: calc(100vh - ${navHeight});
@@ -28,7 +31,8 @@ export const HabitFormContainer = styled.div`
   color: ${textColor};
 `;
 
-export const SignUpButton = styled(Button)`
+export const AddHabit = styled(Button)`
+  position: relative;
   width: 100%;
   height: 50px;
   background-color: ${buttonColor};
@@ -60,4 +64,12 @@ export const Input = styled.input`
   font-size: 20px;
   border-radius: 5px;
   color: ${textColor};
+`;
+
+export const Submit = styled.button`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 `;

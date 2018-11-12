@@ -9,7 +9,7 @@ import {
 
 import HabitForm from './habit_form';
 
-const mapStateToProps = ({ errors}) => {
+const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.habits,
     formType: 'New Habit',

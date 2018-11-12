@@ -17,7 +17,6 @@ import {
 
 export const SessionFormContainer = styled.div`
   ${flexColumn}
-  width: 100%;
   height: calc(100vh - ${navHeight});
   justify-content: center;
   align-items: center;
@@ -26,7 +25,6 @@ export const SessionFormContainer = styled.div`
   color: ${textColor};
 `;
 export const SignUpButton = styled(Button)`
-  width: 100%;
   height: 50px;
   background-color: ${buttonColor};
   font-size: 20px;
@@ -52,7 +50,6 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   display: block;
-  width: 100%;
   height: 40px;
   font-size: 20px;
   border-radius: 5px;

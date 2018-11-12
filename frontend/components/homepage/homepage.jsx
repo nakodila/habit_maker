@@ -1,4 +1,7 @@
 import React from 'react';
+import {
+  Route
+} from 'react-router-dom';
 
 import {
   HomepageContainer,
@@ -11,10 +14,10 @@ import {
 } from './styled_homepage.js';
 
 import { AddHabit } from './habits/habits';
-
 const Homepage = ({ currentUser, logout }) => {
+
   const sessionLinks = () => (
-      <HomepageNav>
+      <HomepageNav className='homepage-nav'>
         <Logo>Stick-to-It</Logo>
         <LoginSignupContainer>
           <SessionLink to="/login">Login</SessionLink>
@@ -24,14 +27,14 @@ const Homepage = ({ currentUser, logout }) => {
       </HomepageNav>
   );
   const personalGreeting = () => (
-    <div>
-      <HomepageNav>
+    <div className='homepage'>
+      <HomepageNav className='homepage-nav'>
         <Logo>Stick-to-It</Logo>
         <LogoutButton onClick={logout}>Log Out</LogoutButton>
       </HomepageNav>
-      <HomepageContainer>
+      <HomepageContainer className='homepage-body'>
         <StyledText>Hi, {currentUser.username}!</StyledText>
-        <AddHabit/>
+        <AddHabit />
       </HomepageContainer>
     </div>
   );

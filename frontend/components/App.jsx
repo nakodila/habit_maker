@@ -16,7 +16,7 @@ import {
 } from './styledApp.js'
 
 const App = () => (
-  <AppContainer>
+  <AppContainer className='AppContainer'>
     <Homepage/>
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />

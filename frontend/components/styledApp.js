@@ -10,5 +10,6 @@ export const AppContainer = styled.div`
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   width: 100%;
+  height: 100%;
   background-color: #fff;
 `;

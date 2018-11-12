@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { TwitterPicker } from 'react-color';
-import Calendar from 'rc-calendar';
-
 import {
   Errors
 } from '../errors/styled_errors';
@@ -29,14 +27,8 @@ class HabitForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.closeWindow = this.closeWindow.bind(this);
-    this.handleChangeComplete = this.handleChangeComplete.bind(this);
+    this.pickColor = this.pickColor.bind(this);
   }
-
-  // componentDidUpdate() {
-  //   if (this.props.errors.length === 0){
-  //     this.closeWindow();
-  //   }
-  // }
 
   update(field) {
     return e => this.setState({
@@ -44,7 +36,7 @@ class HabitForm extends React.Component {
     });
   };
 
-  handleChangeComplete(colour) {
+  pickColor(colour) {
     this.setState({ color: colour.hex });
   };
 
@@ -82,12 +74,11 @@ class HabitForm extends React.Component {
               value={this.state.name}
               onChange={this.update('name')}
             />
-            <Label>Duration</Label>
-            <Calendar/>
+
             <Label>Color:</Label>
                 <TwitterPicker
                   color={this.state.color}
-                  onChangeComplete={this.handleChangeComplete}
+                  onChangeComplete={this.pickColor}
                 />
               <Label>Description</Label>
                 <Input type="textarea"

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import {
   Button
@@ -21,8 +21,7 @@ export const HabitFormContainer = styled.div`
   bottom: 0;
   right: 0;
   left: 0;
-  background: ${buttonColor};
-  width: 900px;
+  background: #FFFFFF;
   height: calc(100vh - ${navHeight});
   justify-content: center;
   align-items: center;
@@ -43,8 +42,13 @@ export const AddHabit = styled(Button)`
 
 export const Form = styled.form`
   ${flexColumn}
+  box-sizing: border-box;
   color: ${textColor};
-  height: 50%;
+  background: ${buttonColor};
+  width: 400px;
+  padding: 40px;
+  height: 100%;
+  border: 1px solid ${borderColor};
   justify-content: space-between;
 `;
 
@@ -55,6 +59,11 @@ export const Greeting = styled.h1`
 
 export const Label = styled.label`
   display: block;
+`;
+
+export const calendar = css`
+  background: #FFFFFF;
+  width: 80%;
 `;
 
 export const Input = styled.input`

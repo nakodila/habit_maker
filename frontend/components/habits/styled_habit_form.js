@@ -11,7 +11,8 @@ import {
   buttonColor,
   navHeight,
   borderColor,
-  flexColumn
+  flexColumn,
+  hoverBackground
 } from '../../util/constantsCSS.js';
 
 export const HabitFormContainer = styled.div`
@@ -31,13 +32,15 @@ export const HabitFormContainer = styled.div`
 `;
 
 export const AddHabit = styled(Button)`
-  position: relative;
-  width: 100%;
+  margin-top: 30px;
   height: 50px;
   background-color: ${buttonColor};
   font-size: 20px;
   color: ${textColor};
   border-color: ${borderColor};
+  :hover {
+    background: ${hoverBackground};
+  }
 `;
 
 export const Form = styled.form`
@@ -47,18 +50,22 @@ export const Form = styled.form`
   background: ${buttonColor};
   width: 400px;
   padding: 40px;
-  height: 100%;
+  /* height: 100%; */
   border: 1px solid ${borderColor};
+  border-radius: 5px;
   justify-content: space-between;
 `;
 
 export const Greeting = styled.h1`
+  align-self: center;
   font-size: 25px;
   margin: 20px;
 `;
 
 export const Label = styled.label`
   display: block;
+  margin-top: 30px;
+  margin-bottom: 15px;
 `;
 
 export const calendar = css`
@@ -73,12 +80,4 @@ export const Input = styled.input`
   font-size: 20px;
   border-radius: 5px;
   color: ${textColor};
-`;
-
-export const Submit = styled.button`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
 `;

@@ -5,5 +5,6 @@ export const Button = styled.button`
   border: 1px solid #F4F1EA;
   box-sizing: border-box;
   border-radius: 5px;
+  cursor: pointer;
   display: block;
 `;
